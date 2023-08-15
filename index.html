@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>GNG Launcher</title>
+    <script type="module" src="./src/renderer.js"></script>
+  </head>
+  <body>
+    <header>
+      <span class="title">GNG Launcher</span>
+      <div class="window-actions">
+        <div class="window-action-button window-action-min">
+          <i class="fa-solid fa-window-minimize"></i>
+        </div>
+        <div class="window-action-button window-action-max">
+          <i class="fa-solid fa-window-maximize"></i>
+        </div>
+        <div class="window-action-button window-action-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="install" hidden>
+        <h1>Install</h1>
+        <p>Installs the latest version of GNG onto your system.</p>
+        <button class="install-btn">Install</button>
+      </div>
+      <div class="launch">
+        <h1>Launch</h1>
+        <p>Launches the latest version of GNG installed on your system.</p>
+        <button class="launch-btn">Launch</button>
+        <h2>Not Launching?</h2>
+        <p>Try backing up stats and reinstalling.</p>
+        <button class="reinstall-btn">Reinstall / Update</button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+:root {
+    --margin: 1rem;
+    --header-height: 3.5rem;
+    --header-color: #1c1c20;
+}
+
+body {
+    background: #223;
+}
+
+header {
+    -webkit-app-region: drag;
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    background: var(--header-color);
+    width: 100vw;
+    height: var(--header-height);
+    transition: transform 400ms ease-in-out;
+}
+
+.header-hidden {
+    transform: translateY(calc(var(--header-height) * -1));
+}
+
+header > .title {
+    margin-left: var(--margin);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.window-actions {
+    -webkit-app-region: none;
+    position: fixed;
+    display: flex;
+    right: 0;
+    flex-direction: row;
+}
+
+.window-action-button {
+    display: flex;
+    height: var(--header-height);
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--header-color);
+    transition: background 100ms ease-in-out;
+}
+
+.window-action-button > i {
+    transition: color 250ms ease-in-out;
+}
+
+.window-action-close > i {
+    font-size: 1.25rem;
+}
+
+.window-action-button:hover {
+    background: #fff;
+}
+
+.window-action-close:hover {
+    background: #bd0000;
+}
+
+.window-action-button:not(.window-action-close):hover > i {
+    color: var(--header-color);
+}
+
+main {
+    margin: var(--margin);
+    margin-top: calc(var(--header-height) + var(--margin) / 2);
+    transition: margin-top 400ms ease-in-out;
+}
+
+body:has(.header-hidden) > main {
+    margin-top: calc(var(--margin) / 2);
+}
+
+h1:not(:first-child), h2 {
+    margin-top: 1rem;
+}
+
+p {
+    font-size: 1.05rem;
+    margin-top: 0.25rem;
+}
+
+button {
+    background: var(--header-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: 2px solid #54aef3;
+    border-radius: 2.12rem;
+    margin-left: -0.25rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    font-size: 1.25rem;
+}
+
+button:hover {
+    filter: brightness(125%);
+}
