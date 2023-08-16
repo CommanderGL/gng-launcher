@@ -18,7 +18,7 @@ With Support For:
     * And the Wii U`,
           productName: "GNG Launcher",
           name: "gng-launcher",
-          version: "1.0",
+          version: "1.1",
           icon: 'logo.png'
         }
       },

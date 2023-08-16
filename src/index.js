@@ -21,7 +21,7 @@ const createWindow = () => {
       preload: path.join(__dirname, './preload.js')
     },
     frame: false,
-    icon: 'logo.png'
+    icon: path.join(__dirname, '../../logo.png')
   });
 
   // and load the index.html of the app.

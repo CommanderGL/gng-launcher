@@ -82,7 +82,13 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     document.querySelector('.install-btn').addEventListener('click', install);
-    document.querySelector('.reinstall-btn').addEventListener('click', reinstall)
+    document.querySelector('.reinstall-btn').addEventListener('click', reinstall);
+    document.querySelector('.reset-dir-btn').addEventListener('click', async () => {
+        window.localStorage.setItem('install-dir', await ipcRenderer.invoke('open-dir'));
+
+        document.querySelector('.launch').removeAttribute('hidden');
+        document.querySelector('.install').setAttribute('hidden', true);
+    });
 
     document.querySelector('.launch-btn').addEventListener('click', () => {
         exec(`cd ${window.localStorage.getItem('install-dir')}/bin && exec ./gng`, (err, stdo, stde) => {
