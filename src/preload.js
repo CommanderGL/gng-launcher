@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
             owner: "CommanderGL",
             repo: "gng"
         });
-        const asset = latestRelease.data.assets.filter(asset => asset.content_type == "application/zip")[0];
+        const asset = latestRelease.data.assets.filter(asset => asset.name == 'zip-build.zip')[0];
 
         console.log(asset);
         await download(asset.browser_download_url, '/tmp/gng-install/');
@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
             owner: "CommanderGL",
             repo: "gng"
         });
-        const asset = latestRelease.data.assets.filter(asset => asset.content_type == "application/zip")[0];
+        const asset = latestRelease.data.assets.filter(asset => asset.name == 'zip-build.zip')[0];
 
         console.log(asset);
         await download(asset.browser_download_url, '/tmp/gng-install/');

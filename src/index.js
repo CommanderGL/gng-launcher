@@ -7,6 +7,7 @@ if (require('electron-squirrel-startup')) {
 }
 
 let gWindow;
+let settingsWindow;
 
 const createWindow = () => {
   // Create the browser window.
@@ -89,4 +90,4 @@ ipcMain.handle('open-dir', async () => {
 
   if (data.canceled) return null;
   return data.filePaths;
-})
+});

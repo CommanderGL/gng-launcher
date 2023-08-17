@@ -6,12 +6,13 @@
 
 :root {
     --margin: 1rem;
+    --page-background: #223;
     --header-height: 3.5rem;
     --header-color: #1c1c20;
 }
 
 body {
-    background: #223;
+    background: var(--page-background);
 }
 
 header {
@@ -113,4 +114,44 @@ button {
 
 button:hover {
     border-color: #74ceff;
+}
+
+.settings {
+    position: fixed;
+    top: calc(var(--header-height) + var(--margin));
+    right: calc(var(--margin) - 70px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: max-content;
+    cursor: pointer;
+    transition: right 500ms ease-in-out;
+}
+
+.settings > span {
+    position: relative;
+    left: -85px;
+    transition: left 500ms ease-in-out;
+    font-weight: bold;
+    margin-left: 0.25rem;
+}
+
+.settings:hover > span {
+    left: 0;
+}
+
+.settings:hover {
+    right: var(--margin);
+}
+
+.settings > i {
+    font-size: 1.25rem;
+    background: var(--page-background);
+    position: relative;
+    z-index: 2;
+    transition: transform 500ms ease-in-out;
+}
+
+.settings:hover > i {
+    transform: rotate(180deg);
 }
